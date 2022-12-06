@@ -142,13 +142,12 @@
   
         const makeItClickable = function () {
           let h1Node = document.getElementsByTagName("h1")[0]
-          h1Node.addEventListener("click",function (event) {
+          h1Node.addEventListener('click',function(event) {
             event.h1Node.style.color = "blue";
           })
         //   h1Node.addEventListener('click', function(){
         //     this.getElementsByTagName('h1')[0].style.color = maxVal = 0xFFFFFF;
         //   })
-          
         }; 
         makeItClickable()
   
@@ -156,9 +155,12 @@
          Change the footer text with something else when the user clicks on it.
         */
   
-        const changeFooterText = function (newText) {
+        const changeFooterText = function () {
           let footerText = document.getElementsByTagName("footer")[0]
-          footerAddress.innerText = newText
+          footerText.addEventListener('click',function(event) {
+            event.footerText.innerText = "blablabla"
+          })
+          // footerAddress.innerText = newText
         };
   
         /* EXERCISE 11
