@@ -96,13 +96,13 @@
          Write a function for adding a new list item in the second unordered list.
         */
   
-        // const addToTheSecond = function (content) {
-        //   let secondList = document.getElementById("secondList");
-        //   let content = document.createElement('li');
-        //   let textnode = document.createTextNode(firstname);
-        //   content.appendChild(textnode);
-        //   secondList.appendChild(content);
-        // }
+        const addToTheSecond = function (content) {
+          let secondList = document.getElementById("secondList");
+          let liNode = document.createElement('li');
+          liNode .innerText = content;
+          secondList.appendChild(liNode);
+        }
+
         /* EXERCISE 6
          Write a function for adding a second paragraph to the first div.
         */
@@ -128,11 +128,12 @@
         */
   
         const paintItGreen = function () {
-          // let unorderedListBgColor = document.querySelectorAll("ul")
-
-          document.getElementById("firstList").style.backgroundColor ="green";
-          document.getElementById("secondList").style.backgroundColor ="green";
-          
+          let unorderedListBgColor = document.getElementsByTagName("ul")
+            for (let i = 0; i < unorderedListBgColor.length; i++) {
+              let unorderedList = unorderedListBgColor[i];
+              unorderedListBgColor.style.backgroundColor = "green";
+              
+            }
         };
   
         /* EXERCISE 9
@@ -140,12 +141,16 @@
         */
   
         const makeItClickable = function () {
-        //   let h1Node = document.getElementsByTagName("h1")[0]
+          let h1Node = document.getElementsByTagName("h1")[0]
+          h1Node.addEventListener("click",function (event) {
+            event.h1Node.style.color = "blue";
+          })
         //   h1Node.addEventListener('click', function(){
         //     this.getElementsByTagName('h1')[0].style.color = maxVal = 0xFFFFFF;
         //   })
           
-        };
+        }; 
+        makeItClickable()
   
         /* EXERCISE 10
          Change the footer text with something else when the user clicks on it.
