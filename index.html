@@ -128,10 +128,10 @@
         */
   
         const paintItGreen = function () {
-          let unorderedListBgColor = document.getElementsByTagName("ul")
+          let unorderedListBgColor = document.getElementsByTagName("ul");
             for (let i = 0; i < unorderedListBgColor.length; i++) {
               let unorderedList = unorderedListBgColor[i];
-              unorderedListBgColor.style.backgroundColor = "green";
+              unorderedList.style.backgroundColor = "green";
               
             }
         };
@@ -139,26 +139,31 @@
         /* EXERCISE 9
          Make the heading of the page change color every time the user clicks on it.
         */
-  
-        const makeItClickable = function () {
-          let h1Node = document.getElementsByTagName("h1")[0]
-          h1Node.addEventListener('click',function(event) {
-            event.h1Node.style.color = "blue";
+        
+       
+       const makeItClickable = function (){  
+          const randomColor = function (params) {
+            let r = Math.floor(Math.random()*(255+1));
+            let g = Math.floor(Math.random()*(255+1));
+            let b = Math.floor(Math.random()*(255+1));
+   
+            return [r,g,b]
+          }
+          let h1Node = document.getElementsByTagName("h1")[0];
+            h1Node.addEventListener("click",function(event){
+            event.target.style.color = `rgba(${randomColor()})`;
           })
-        //   h1Node.addEventListener('click', function(){
-        //     this.getElementsByTagName('h1')[0].style.color = maxVal = 0xFFFFFF;
-        //   })
         }; 
-        makeItClickable()
+        
   
         /* EXERCISE 10
          Change the footer text with something else when the user clicks on it.
         */
   
-        const changeFooterText = function () {
+        const changeFooterText = function (newText) {
           let footerText = document.getElementsByTagName("footer")[0]
           footerText.addEventListener('click',function(event) {
-            event.footerText.innerText = "blablabla"
+            event.target.innerText = newText;
           })
           // footerAddress.innerText = newText
         };
